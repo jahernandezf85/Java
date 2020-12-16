@@ -25,10 +25,11 @@ public class Ej_Select2 {
 			
 			while (resultSet.next()) {
 				
-				String name = resultSet.getString("nombre_Espa");
+				String nombre = resultSet.getString("nombre_Espa");
 				BigDecimal precio = resultSet.getBigDecimal("precio_unidad");
-
-				System.out.println(name + " " + precio);
+				
+				System.out.printf("%-40s %10.2f\n", nombre, precio);
+				
 				
 			}
 			

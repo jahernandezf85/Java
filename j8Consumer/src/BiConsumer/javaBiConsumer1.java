@@ -15,6 +15,10 @@ public class javaBiConsumer1 {
 		};
 		
 		bic1.accept(10,25);
+		
+		BiConsumer<Integer, Integer> bic2=(x,y) -> System.out.println(x+y);
+		
+		bic2.accept(5, 3);
 	}
 
 }

@@ -20,7 +20,8 @@ public class Hilo extends Thread {
 	private final String PROTOCOLO;
 	private String user;
 	private AcumuladorBasico acumulador;
-
+	HashMap<String, List<Double>> acumuladores; 
+	
 	Hilo(Socket socket,  HashMap<String, HashMap<String, List<Double>>> userAcumulador, AcumuladorBasico acumulador){
 		super();
 		this.socket = socket;
@@ -46,7 +47,7 @@ public class Hilo extends Thread {
 			
 			user = entrada.readLine();
 			
-			HashMap<String, List<Double>> acumuladores; 
+			
 			if(userAcumulador.containsKey(user)) {
 				acumuladores = userAcumulador.get(user);
 			} else {
@@ -104,14 +105,17 @@ public class Hilo extends Thread {
 				
 				operacion = entrada.readLine();
 			}
-			socket.close();
-			userAcumulador.put(user, acumuladores);
-		
-			System.out.println("[LOG]: Conexion cerrada con exito.");
-			
-					
+				
 		} catch (IOException e) {
 			System.out.println("[ERROR]: Conexion con el cliente perdida");
+		} finally {
+			try {
+				socket.close();
+				userAcumulador.put(user, acumuladores);
+			} catch (IOException e) {
+				System.out.println("[ERROR]: hubo algun problema y no se guardaron los datos del cliente");
+			}
+			
 		}
 	}
 	

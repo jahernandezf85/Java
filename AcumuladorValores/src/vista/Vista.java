@@ -72,11 +72,7 @@ public class Vista {
 				sel = generarMenu(protocolo);
 				
 			}
-			
-			salida.write(opciones.get(0));
-			salida.newLine();
-			salida.flush();
-			
+	
 		} catch (IOException e) {
 			System.out.println("[ERROR]: Se ha perdido la conexion con el servidor");
 		}

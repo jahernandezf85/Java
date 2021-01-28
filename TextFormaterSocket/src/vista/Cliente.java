@@ -13,13 +13,14 @@ public class Cliente {
 	private Socket socket;
 	private BufferedReader entrada= null;
 	private BufferedWriter salida = null;
-	private HashMap<Integer, String> opciones = new HashMap();
+	private HashMap<Integer, String> opciones;
 	
 	Cliente(){
 		try {
 			socket = new Socket("localhost", 1001);
 			entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			salida = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+			opciones = new HashMap<Integer, String>();
 		} catch (IOException e) {
 			System.out.println("[ERROR]: No se ha podido establecer la conexion con el servidor");
 		}

@@ -52,7 +52,7 @@ public class Datos {
 		
 		public boolean login(String user, String pass) {
 			boolean loginCorrecto = false;
-			if(dataUsers.containsKey(user) && dataUsers.get(user).equals(pass) && conectedUsers.contains(user)) {
+			if(dataUsers.containsKey(user) && dataUsers.get(user).equals(pass)) {
 				loginCorrecto = true;
 				addConectedUser(user);
 			}

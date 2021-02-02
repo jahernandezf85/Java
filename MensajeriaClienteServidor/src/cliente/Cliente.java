@@ -1,5 +1,6 @@
 package cliente;
 
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -26,6 +27,7 @@ public class Cliente extends SistemaVentanas {
 	private BufferedWriter salida;
 	private HashMap<String, Integer> oper;
 	private Operacion operacion;
+	private boolean logeado = false;
 
 	
 	Cliente() {
@@ -57,8 +59,19 @@ public class Cliente extends SistemaVentanas {
 	}
 	
 	void ejecutar() {
-		
-		
+		/*
+		while(true) {
+		while(logeado) {
+			String mensaje;
+			System.out.println("[DEV]: Dentro del bucle");
+			try {
+				mensaje = entrada.readLine().toString();
+				this.addMensaje(mensaje, Color.black);
+			} catch (IOException e) {
+				System.out.println("Conexion con el servidor perdida");
+			}
+		}
+		}*/
 	}
 	
 	public static void main(String[] args) {
@@ -81,6 +94,7 @@ public class Cliente extends SistemaVentanas {
 			
 			String resp = entrada.readLine();
 			if(!resp.equals("Error")) {
+				logeado = true;
 				return true;
 			} else {
 				return false;

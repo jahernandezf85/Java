@@ -23,12 +23,12 @@ public class Articulo implements Comparable<Articulo>{
 		if(o.getClass() != this.getClass()) return false;
 		Articulo art = (Articulo)o;
 		
-		return this.codigoPublicacion == art.getCodigoPublicacion();
+		return this.codigoPublicacion.equals(art.getCodigoPublicacion());
 	}
 	
 	@Override
 	public int compareTo(Articulo articulo) {
-		return this.fechaPublicacion.compareTo(articulo.getFechaPublicacion());
+		return this.codigoPublicacion.compareTo(articulo.getCodigoPublicacion());
 	}
 	
 	public String getAutor() {

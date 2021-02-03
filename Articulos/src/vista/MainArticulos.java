@@ -27,8 +27,8 @@ public class MainArticulos {
 			System.out.println(articulo.toString());
 		}
 		
-		System.out.println("========= Articulos octubre 2020 ========");
-		for(Articulo articulo: articulos.obtenerPorFechas(LocalDate.of(2020, 10, 01), LocalDate.of(2020, 10, 31))) {
+		System.out.println("========= Articulos Febrero 2021 ========");
+		for(Articulo articulo: articulos.obtenerPorFechas(LocalDate.of(2021, 02, 01), LocalDate.of(2021, 03, 01))) {
 			System.out.println(articulo.toString());
 		}
 		

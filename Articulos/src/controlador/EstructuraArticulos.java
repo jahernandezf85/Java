@@ -38,7 +38,12 @@ public class EstructuraArticulos {
 	
 	
 	public SortedSet<Articulo> obtenerPorFechas(LocalDate fechaInicio, LocalDate fechaFin){
-		return articulosOrd.subSet(new Articulo(fechaInicio), new Articulo(fechaFin));
+		SortedSet<Articulo> porFecha = new TreeSet<Articulo>();
+		for(Articulo art:articulosOrd) {
+			if (art.getFechaPublicacion().isAfter(fechaInicio) && art.getFechaPublicacion().isBefore(fechaFin))
+				porFecha.add(art);
+		}
+		return porFecha;
 	}
 	@Override
 	public String toString() {

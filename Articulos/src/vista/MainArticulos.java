@@ -31,7 +31,6 @@ public class MainArticulos {
 		for(Articulo articulo: articulos.obtenerPorFechas(LocalDate.of(2021, 02, 01), LocalDate.of(2021, 03, 01))) {
 			System.out.println(articulo.toString());
 		}
-		
 	}
 	
 	public static void main(String[] args) {
